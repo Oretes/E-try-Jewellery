@@ -1,0 +1,13 @@
+.label-font {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.select-opt {
+  border: 2px solid black;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  width: 250px;
+  font-size: 18px;
+  outline: none;
+}

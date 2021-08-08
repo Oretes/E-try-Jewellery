@@ -1,0 +1,94 @@
+.logout-btn {
+  margin-left: 950px;
+}
+.dropZone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 200;
+  height: 250px;
+  border: 2px dashed #0728bb;
+  border-radius: 5px;
+  background: white;
+  margin: 10px 0;
+}
+
+progress::-webkit-progress-value {
+  transition: width 0.1s ease;
+}
+img {
+  width: 250px;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Black background with opacity */
+  z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+.wrapper {
+  display: grid;
+  place-items: center;
+  height: calc(100vh - 20px);
+}
+
+.label-font {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.add-jewellery-input {
+  width: 250px;
+  height: 30px;
+  border: 2px solid #000000;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.select-opt {
+  border: 2px solid black;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  width: 250px;
+  font-size: 15px;
+  outline: none;
+}
+.form-group{
+  margin-left: 5px;
+}
+
+/* mobile devices */
+@media only screen and (max-width: 650px) {
+  .logout-btn{
+    margin-left: 70px;
+  }
+  .admin-panel-text {
+    display: none !important;
+  }
+}
+
+
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .logout-btn{
+      margin-left: 300px !important;
+    }
+}

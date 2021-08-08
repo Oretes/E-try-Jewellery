@@ -1,0 +1,71 @@
+.canvas-header {
+  height: 100vh;
+}
+.navbar li {
+  display: inline;
+  padding-right: 30px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;    /*need to check=========================================*/
+}
+.small-logo {
+  width: 120px;
+  height: 40px;
+  outline: none;
+}
+.large-logo {
+  width: 230px;
+  max-width: 300px;
+  outline: none;
+}
+
+.navbar-color {
+  /* background-color: #132F6D ; */
+  background-color:  #00116e;
+  /* background-color: #800002; */
+  /* background-image: linear-gradient(to right,black, red);  */
+}
+
+
+.custom-upload-file::-webkit-file-upload-button {
+  visibility: hidden;
+  width: 10px;
+  font-size: 5px;
+}
+.custom-upload-file::before {
+  margin-left: 30px;
+  content: 'Upload Photo';
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 2.5px 15px;
+  outline: none !important;
+  white-space: nowrap !important;
+  -webkit-user-select: none !important;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 10pt;
+}
+
+
+.nav-btn {
+  /* margin-right: 6.7px;
+  margin-left: 6.7px; */
+  margin: 0 5px 0 5px;
+}
+@media only screen and (max-width: 650px) {
+  .large-logo {
+    width: 40px;
+  }
+}
+#c{
+  position:fixed;
+  z-index: 2;
+
+}
+.snapshot{
+  text-align: center;
+  padding-left: 20px;
+}

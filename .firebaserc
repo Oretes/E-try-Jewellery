@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "jwellery-data": {
+      "hosting": {
+        "jwellery-app": [
+          "jwellery-data"
+        ]
+      }
+    },
+    "jewellery-data": {
+      "hosting": {
+        "jwellery-app": [
+          "jewellery-data"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jewellery-data"
+  }
+}

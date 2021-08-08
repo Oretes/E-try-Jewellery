@@ -1,0 +1,32 @@
+<form autocomplete="off" name="newtype" method="post" #formCtrl="ngForm" (ngSubmit)="newType()">
+ 
+    <label class="label-font">List of Types that already exist :</label>
+    <ol>
+      <li style="font-size:15px; font-weight: 400;" *ngFor="let type of newtype.typelist">{{type}}</li>
+    </ol>
+     <br>
+   
+     <label class="label-font" for="name"> Enter the display Name : </label>
+     <input class="add-type-input" type="text" name="name" autocomplete="off"  [(ngModel)]="newtype.name" required>
+     <br>
+     <br>
+   
+     <label class="label-font" for="name"> Enter a typename all small with no spaces : </label>
+     <input class="add-type-input" type="text" name="type" autocomplete="off"  [(ngModel)]="newtype.type" required>
+     <br>
+     <br>
+  <label class="label-font" for="order"> Enter the number where the type should appear : </label>
+  <input class="add-type-input" type="number" name="order" autocomplete="off"  [(ngModel)]="newtype.order" required>
+  <br>
+  <br>
+
+  <label class="label-font" for="order"> Choose if is it a Pair : </label>
+     <select class="select-opt" [(ngModel)]="newtype.pair" name="pair" required>
+        <option style="display:none" value="">Is it a Pair?</option>
+        <option  [ngValue] ="type" *ngFor="let type of newtype.pairs">{{type}}</option>
+      </select>
+     <p style="color:red">{{message}}</p>
+     <br>
+       <button mat-raised-button style="background-color: rgb(0, 2, 92); color:rgb(255, 196, 32);">CREATE</button>
+   
+   </form>

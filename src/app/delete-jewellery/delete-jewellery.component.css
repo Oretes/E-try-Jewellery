@@ -1,0 +1,275 @@
+
+img {
+
+    object-fit: contain;
+  }
+ 
+  .item > div:nth-child(1){
+    margin: 16px;
+  
+  }
+
+  
+  .item{
+    background: #fcfcfc;
+    border: 0.5px solid #ccc;
+    border-radius: 12px;
+    width: 70px;
+    height: 140px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+    display: inline-flex;
+  
+    /* object-fit: contain; */
+  
+  }
+  /*added here */
+  .image-grid {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* .image-grid > div:nth-child(1){
+    margin: 16px;
+  } */
+  
+  .image-blocks{
+    background: #fcfcfc;
+    border: 2px solid #dfbd00;
+    border-radius: 12px;
+    margin: 10px 0 10px 0;
+    width: 130px;
+    height: 150px;
+    overflow: hidden;
+    align-items: center;
+  }
+  
+   /* bottom scroll menu css for the jewellery content ========================================== */
+  div.scrollmenu {
+    background-color: rgb(0, 1, 56);
+    overflow: scroll;
+    white-space: nowrap;
+    width: 38vw;
+    bottom: 0;
+    position: fixed;
+    /* text-align: center; */
+  }
+  div.scrollmenu::-webkit-scrollbar {
+    width: 0px;
+    height: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  div.scrollmenu button {
+    display: inline-block;
+    color: rgb(255, 196, 32);
+    text-align: center;
+    padding: 24px;
+    text-decoration: none;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+  
+  div.scrollmenu button:hover {
+    background-color: rgb(2, 0, 121);
+  }
+  
+  /* scroll for the jewellery collection option =========================================== */
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  .app {
+    width: 577px;
+    height: 210px;
+    background: transparent;
+    overflow-x: scroll;
+    display: flex;
+    white-space: nowrap;
+  }
+  .scrollbar-component {
+    margin-top: calc(100vh - 385px);
+  }
+  div.app::-webkit-scrollbar {
+    width: 0px;
+    height: 0px; /* Remove scrollbar space */
+    background: transparent;
+  }
+  div.app::-webkit-scrollbar {
+    width: 0px;
+    height: 0px; /* Remove scrollbar space */
+    background: transparent;
+  }
+  .hs > li,
+  .item {
+    width: 130px;
+    height: 180px;
+    margin: 5px;
+    /* scroll-snap-align: center; */
+    /* padding: calc(var(--gutter) / 2 * 1.5); */
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid rgb(247, 201, 0);
+  
+  }
+  .hs > li {
+    display: inline-flex;
+  }
+  
+  /* media query for small devices like mobilephones===================== */
+  
+  @media only screen and (max-width: 728px) {
+    .container {
+      background-color: #fbfbfb;
+    }
+  
+    div.scrollmenu {
+      width: 100%;
+    }
+    .hs > li,
+    .item {
+      background-color: rgb(255, 255, 255);
+      border: 2px solid rgb(247, 201, 0);
+    }
+  
+    .app {
+      width: 577px;
+      height: 190px;
+      background: transparent;
+      overflow-x: scroll;
+      display: flex;
+      white-space: nowrap;
+    }
+  
+    .scrollbar-component {
+      /* margin-bottom: calc(100vh - 580px); */
+      margin: 10px 0 240px 0;
+    }
+  
+    .media-hidden {
+      display: none;
+    }
+  
+    div.scrollmenu button {
+      font-size: 15px;
+      padding: 20px;
+    }
+  }
+  
+  
+  /* for iphone 5s smllest device screen===================== */
+  
+  @media only screen and (min-device-width: 300px) and (max-width: 340px) {
+    .app {
+      width: 577px;
+      height: 170px;
+    }
+    .media-hidden {
+      display: none;
+    }
+    .hs > li,
+    .item {
+      width: 110px;
+      height: 150px;
+      border-radius: 5px;
+    }
+    div.scrollmenu button {
+      font-size: 12px;
+      padding: 17px;
+    }
+    .scrollbar-component {
+      margin: 10px 0 180px 0;
+    }
+  }
+  
+  /*==================== for ipad 1,2 and other===================== */
+  
+  /* Portrait */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1280px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .container {
+      background-color: #fbfbfb;
+    }
+    .media-hidden {
+      display: none;
+    }
+    div.scrollmenu {
+      width: 100%;
+    }
+  
+    div.scrollmenu button {
+      font-size: 20px;
+      padding: 28px;
+    }
+  
+    .scrollbar-component {
+      margin: 10px 0 220px 0;
+    }
+  
+    .scrollbar-component > .app {
+      width: 770px;
+      height: 250px;
+    }
+  
+    .hs > li,
+    .item {
+      width: 170px;
+      height: 220px;
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+  
+  /* ==============for ipad pro 10.5inch. ==================== */
+  @media only screen and (min-device-width: 834px) and (max-device-width: 1280px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    .scrollbar-component > .app {
+      width: 1040px;
+      height: 320px;
+    }
+  
+    div.scrollmenu button {
+      font-size: 25px;
+      padding: 34px;
+    }
+  
+    .hs > li,
+    .item {
+      width: 230px;
+      height: 280px;
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-top-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      /* border-radius: 15px; */
+    }
+    .media-hidden {
+      display: none;
+    }
+    .scrollbar-component {
+      margin: 10px 0 260px 0;
+    }
+  
+    .hs > li,
+    .item {
+      background-color: rgb(255, 255, 255);
+      border: 3px solid rgb(247, 201, 0);
+    }
+  }
+  .snapshot{
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 300px;
+    height: 300px;
+  }
+  
+  
+  
+  

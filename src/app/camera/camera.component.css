@@ -1,0 +1,39 @@
+.actionBtn {
+  font-size: 2em;
+  cursor: pointer;
+  justify-content: center;
+
+
+
+}
+.snapshot{
+  text-align: center;
+}
+.img{
+      width: 200px;
+      height: 200px;
+  }
+
+ul.links{
+  padding-bottom: 20px;
+}
+
+.webcam-module {
+  margin-top: 10%;
+  margin-left: 22%;
+}
+
+.webcam-btn {
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  /* width: 900px; */
+}
+/* .wrapper{
+  display: flex;
+  background: #383838;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+} */

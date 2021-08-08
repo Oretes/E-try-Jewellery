@@ -1,0 +1,17 @@
+<div class="webcam-btn">
+  <div class="">
+  <webcam class="webcam-module"
+       [width]="400" [trigger]="triggerObservable"
+      (imageCapture)="handleImage($event)" *ngIf="!showWebcam"
+      [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+      [videoOptions]="videoOptions" (cameraSwitched)="cameraWasSwitched($event)"
+      (initError)="handleInitError($event)">
+  </webcam>
+  <div class="actionBtn"><button (click)="toggleWebcam();" title="Open camera" style="width: 500px; height: 30px; background-color: #00116e; color: #dfbd00; font-size: 20px; box-shadow: 5px 5px 10px #00000063;"><mat-icon>camera</mat-icon></button></div>
+  <div class="actionBtn"><button (click)="triggerSnapshot();"title="Take Picture" style="width: 500px; height: 30px; background-color: #00116e; color: #dfbd00; font-size: 20px; box-shadow: 5px 5px 10px #00000063; margin-bottom: 20px;">CAPTURE</button><div>
+  </div>
+  </div>
+  <h4 *ngIf="errors.length > 0">Messages:</h4>
+  <ul *ngFor="let error of errors">
+    <li>{{error | json}}</li>
+  </ul>

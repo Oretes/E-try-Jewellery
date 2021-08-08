@@ -1,0 +1,24 @@
+<form autocomplete="off" name="changecategory" method="post" #formCtrl="ngForm" (ngSubmit)="changeCategory()">
+ 
+ <label class="label-font">List of Existing Categories appearing in the same order :</label>
+ <ol>
+   <li *ngFor="let type of changecat.categories">{{type}}</li>
+ </ol>
+  <br>
+  <label class="label-font" for="name"> Select a Category to Replace : </label>
+   <select class="select-opt" [(ngModel)]="changecat.selected" name="type" required>
+    <option style="display:none" value="">--select--</option>
+    <option  [ngValue] ="type" *ngFor="let type of changecat.categories">{{type}}</option>
+  </select>
+   <br>
+   <br>
+     <label class="label-font" for="name"> Enter the new name for the Category : </label>
+     <input class="change-cat-input" type="text" name="name" autocomplete="off"  [(ngModel)]="changecat.name" required>
+     <br><br>
+
+      
+     <p style="color:red">{{message}}</p>
+       <button mat-raised-button style="background-color: rgb(0, 2, 92); color:rgb(255, 196, 32);">Change</button>
+   
+   </form>
+   

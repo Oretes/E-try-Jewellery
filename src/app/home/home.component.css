@@ -1,0 +1,326 @@
+/* app-sidebar {
+    overflow-y: scroll;
+} */
+.cont{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: rgb(
+    108,
+    196,
+    255
+  );  */
+  /* background-color: #9DD5FF ; */
+  /* background-color:#59E4CC; */
+  /* background-color: #b1e70088 ; */
+  background-color: #F2BEDD ;
+}
+
+.toolbar-color {
+  /* background-color: #132F6D ; */
+  background-color: #00116e;
+  /* background-color: #800002; */
+
+  /* background-image: linear-gradient(to right, red, black); */
+}
+
+.toolbar-color span {
+  color: #dbcd00;
+}
+
+
+.left-column {
+  /* top: calc(60px + 0px); */
+  position: fixed;
+  width: 62vw;
+  /* height: calc(100% + 20px - 80px); */
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+
+}
+#c{
+  position: fixed;
+  z-index: 1;
+
+}
+
+
+.right-column {
+  position: fixed;
+  right: 0px;
+  width: 38vw;
+  height: 100%;
+  overflow-y: auto;
+}
+@media only screen and (max-width: 1280px) {
+  .cont {
+    flex-direction: column;
+  }
+  .left-column {
+    position: relative;
+    width: auto;
+  }
+  .right-column {
+    position: relative;
+    width: auto;
+    right: unset;
+    height: unset;
+  }
+}
+#canvasdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 16px;
+  height: 100%;
+  max-width: 200px;
+  padding: 16px;
+  background-color: rgb(255, 255, 255);
+}
+
+/* bottom scroll menu css for the jewellery conent ========================================== */
+
+div.scrollmenu {
+  background-color: rgb(0, 1, 56);
+  overflow: scroll;
+  white-space: nowrap;
+  width: 38vw;
+  bottom: 0;
+  position: fixed;
+}
+div.scrollmenu::-webkit-scrollbar {
+  width: 0px;
+  height: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+div.scrollmenu button {
+  display: inline-block;
+  color: rgb(255, 196, 32);
+  text-align: center;
+  padding: 24px;
+  text-decoration: none;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+div.scrollmenu button:hover {
+  background-color: rgb(2, 0, 121);
+}
+
+/* scroll for the jewellery collection option =========================================== */
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+.app {
+  width: 577px;
+  height: 210px;
+  background: transparent;
+  overflow-x: scroll;
+  display: flex;
+  white-space: nowrap;
+}
+.scrollbar-component {
+  margin-top: calc(100vh - 385px);
+}
+div.app::-webkit-scrollbar {
+  width: 0px;
+  height: 0px; /* Remove scrollbar space */
+  background: transparent;
+}
+div.app::-webkit-scrollbar {
+  width: 0px;
+  height: 0px; /* Remove scrollbar space */
+  background: transparent;
+}
+.hs > li,
+.item {
+  width: 130px;
+  height: 180px;
+  margin: 5px;
+  /* scroll-snap-align: center; */
+  /* padding: calc(var(--gutter) / 2 * 1.5); */
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  border: 2px solid rgb(247, 201, 0);
+}
+.hs > li {
+  display: inline-flex;
+}
+
+/* media query for small devices like mobilephones===================== */
+
+@media only screen and (max-width: 728px) {
+  .cont {
+    background-color: #fbfbfb;
+  }
+
+  div.scrollmenu {
+    width: 100%;
+  }
+  .hs > li,
+  .item {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(247, 201, 0);
+  }
+
+  .app {
+    width: 577px;
+    height: 190px;
+    background: transparent;
+    overflow-x: scroll;
+    display: flex;
+    white-space: nowrap;
+  }
+
+  .scrollbar-component {
+    /* margin-bottom: calc(100vh - 580px); */
+    margin: 10px 0 240px 0;
+  }
+
+  .media-hidden {
+    display: none;
+  }
+
+  div.scrollmenu button {
+    font-size: 15px;
+    padding: 20px;
+  }
+}
+
+
+/* for iphone 5s smllest device screen===================== */
+
+@media only screen and (min-device-width: 300px) and (max-width: 340px) {
+  .app {
+    width: 577px;
+    height: 170px;
+  }
+  .hs > li,
+  .item {
+    width: 110px;
+    height: 150px;
+    border-radius: 5px;
+  }
+  div.scrollmenu button {
+    font-size: 12px;
+    padding: 17px;
+  }
+  .scrollbar-component {
+    margin: 10px 0 180px 0;
+  }
+}
+
+/*==================== for ipad 1,2 and other===================== */
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1280px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .container {
+    background-color: #fbfbfb;
+  }
+  .media-hidden {
+    display: none;
+  }
+  div.scrollmenu {
+    width: 100%;
+  }
+
+  div.scrollmenu button {
+    font-size: 20px;
+    padding: 28px;
+  }
+
+  .scrollbar-component {
+    margin: 10px 0 220px 0;
+  }
+
+  .scrollbar-component > .app {
+    width: 770px;
+    height: 250px;
+  }
+
+  .hs > li,
+  .item {
+    width: 170px;
+    height: 220px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+/* ==============for ipad pro 10.5inch. ==================== */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1280px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .scrollbar-component > .app {
+    width: 1040px;
+    height: 320px;
+  }
+
+  div.scrollmenu button {
+    font-size: 25px;
+    padding: 34px;
+  }
+
+  .hs > li,
+  .item {
+    width: 230px;
+    height: 280px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    /* border-radius: 15px; */
+  }
+
+  .scrollbar-component {
+    margin: 10px 0 260px 0;
+  }
+
+  .hs > li,
+  .item {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(247, 201, 0);
+  }
+}
+
+.webcam-wrapper {
+  display: inline-block;
+  position: relative;
+  line-height: 0;
+
+}
+
+  canvas {
+    display: none;
+  }
+
+  /* .camera-switch {
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAE9UlEQVR42u2aT2hdRRTGf+cRQqghSqihdBFDkRISK2KDfzDWxHaRQHEhaINKqa1gKQhd6EZLN+IidCH+Q0oWIkVRC21BQxXRitVaSbKoJSGtYGoK2tQ/tU1jY5v0c5F54Xl7b/KSO/PyEt+3e5f75p7zzZwzZ74zUEIJJfyfYaEGllQGVAGZlENdBy6Z2cSiYFTSKkkfS/pH/nBF0kFJdUW9AiRVASeAukD8DgNrzOySrwEzng18KaDzALXuG8W3AiStAvqBisBRNg40mtlPxbYCOgvgPO4bncWW+JpVeDQXRQhIygDfA00F5r0XuNfMrgclQFI98DDQCNQA5ZFXqoCWBVp8XwHRHeEqcN7loy/NbHBesyqpQ1KfFj/6nC+ZvFaApFrgPaCZpYVvgCfNbDiRAElNwGFg+RIt/X8H2s2s9wYCJDUAR4HqJX7++RN40MwGpgmQVAH0AQ2BPz4AHHPl8nBOAqtyFWQjsA6oL4Ada81sPDv7uwImod8kvSJp9RyS8O2SXnb/DYVd2Y9VSroQ4ANXJO2WVJmixqh0kzMWwL4LkiqRtDnA4D1zmfE8j9g9AezcnAHaPcfXdbfdnPZ2Yps6+DwAvO/Z1naTdApY7Xng48BDZnY1MpMVQBuw3iXc5Tnb0wBwBPjUzP6eoezuArZ6svM0geJLkvZEYnl3nkntoqROSbckSW2Suj3ZOIangc7GPJuUtNGdFIfmMeavktoSSKiW9LMPw30Q8JqkekmjCbOZRhuclLQjgYSNxUBAj6RyZ9ATgUJpUtJTCSR8vpAEXHAyWK5BXYFIGHOlepSAloUk4NEYgyoknQhEwhFJ0e8h6VSaQeerCb5uZgdi9utxYBNwOUD93hIVXswM4INCi6K9wAszFC2DwLOBDjHbYp59karIUnRdzYy/3ClqVklaUhfwTICj7K25OqA7a4wWagVsm4Me/xzwg2cCqqONFzO7DPxSCAJi436GUBgHHguQD2oTlJ55oSzP9ybccsttSJw1szdjFOSnI/8dTCGZHwcORp4Nx7y3B1iZ8/sm4MW8/Euxg5wIsS/HaAp3zeP4/G7obRDXI4jiTIA22H7Xdc7X+S3A5lC7QBQ357aq3VAjCeSkwUfAJrfvz+R8A9ADLAtZB+TinpjC5JMA+//jwPZZnF8G7J+L8z4IWB/zbG+gIujVWfLBW/NStVMmqaG4POJRsIjix7h8IGnLQuoBbQki5sVAJHyYm7YkNaRRtXwQ8G1cHpX0iKRrgUjYno17Sf0LrQhJUkdCeHWkVITGJI0k1QeS3ikGSUzOyJUJJNznYneuOCnpTldcxa2kP3xJYqOeSDjqZG8ShJLnE8TTuMS6Iyu1BW7djZqkfo9N0QOuYJmYQddfB7RG+gLTNzqAY9FrL+5/nwEbvDdJJe3zzOrhNP3AWRqmk55t3ZcBuj3b2gb0Sbrbo/NNzk7fFzu7s/E5EiC+rrmeQU0Kx2skvRFoOx2ZzlmSdgbsw49JetvtBpk8nM64d/cGbNtJ0s7cGyJlwHeEv+t3nqnLSgPAUOSGyG3AHUxdzqoJbEcvcL+ZTeTeEapzJKxgaeOcc/7Mf06D7kFrguS0VDAMtGadv+E47DT9tcChJej8ISfpD+abgTe45uOkFi8mnQ+JBVQ+d4VXuOptjavcyot8pq86mfwk8LWZnaOEEkoooYQSSojDv8AhQNeGfe0jAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    height: 48px;
+    width: 48px;
+    background-size: 80%;
+    cursor: pointer;
+    background-position: center;
+    transition: background-color 0.2s ease;
+
+
+  } */
+  .i{
+     z-index: 2;
+  }
+
+

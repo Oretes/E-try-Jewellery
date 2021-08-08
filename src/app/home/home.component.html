@@ -1,0 +1,60 @@
+
+
+<div class="cont">
+  <div class="left-column">
+    <div #canvasdiv>
+     <app-canvas [canvasWidth]="canvasWidth" [canvasHeight]="canvasHeight" [newImage]="newImage" [type]="type"
+        [pair]="pair" [changesMade]="changesMade"></app-canvas>
+   </div></div>
+<br>
+<br>
+<div class="right-column">
+    <mat-toolbar class="media-hidden toolbar-color">
+      <span style="margin-left: 180px;">Jewellery Showcase</span>
+    </mat-toolbar>
+    <mat-card class="media-hidden" style="background-color: #fff; padding: 15px;">
+      <mat-card-content>
+        <h6>
+          Note: We don't store any of your information while operating the
+          e-Jewellery tool
+        </h6>
+      </mat-card-content>
+    </mat-card>
+
+
+    <!-- <div class="action">
+      <span>+</span>
+      <ul>
+        <li>
+          <label for="">Brightness</label>
+          <input type="range" min="0" max="200" value="100" step="1" onchange="applyFilter()" data-filter="brightness" data-scale="%">
+        </li>
+        <li>
+          <label for="">Contrast</label>
+          <input type="range" min="0" max="200" value="100" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%">
+        </li>
+        <li>
+          <label for="">Grayscale</label>
+          <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%">
+        </li>
+        <li>
+          <label for="">Hue Rotate</label>
+          <input type="range" min="0" max="360" value="0" step="1" onchange="applyFilter()" data-filter="hue-rotate" data-scale="deg">
+        </li>
+        <li>
+          <label for="">Saturation</label>
+          <input type="range" min="0" max="100" value="1" step="1" onchange="applyFilter()" data-filter="saturation" data-scale="%">
+        </li>
+        <li>
+          <label for="">Blur</label>
+          <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px">
+        </li>
+      </ul> -->
+
+
+
+ <div class="desktop">
+      <app-sidebar (sendLink)="sendLink($event)"></app-sidebar>
+    </div>
+  </div>
+</div>

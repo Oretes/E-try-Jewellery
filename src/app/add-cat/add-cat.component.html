@@ -1,0 +1,20 @@
+<form autocomplete="off" name="newcategory" method="post" #formCtrl="ngForm" (ngSubmit)="newcategory()">
+ 
+ <label class="label-font">List of Existing Categories appearing in the same order</label>
+ <br>
+ <ol>
+   <li style="font-size: 15px; font-weight: 400;" *ngFor="let type of newcat.categories">{{type}}</li>
+ </ol>
+  <br>
+
+  <label class="label-font" for="name"> Enter the name of new Category : </label>
+  <input class="add-cat-input" type="text" name="name" autocomplete="off"  [(ngModel)]="newcat.name" required>
+  <br><br>
+  <label class="label-font" for="order"> Enter the number where the Category should appear : </label>
+  <input class="add-cat-input" type="number" name="order" autocomplete="off"  [(ngModel)]="newcat.order" required>
+  <br><br>
+   
+  <p style="color:red">{{message}}</p>
+    <button mat-raised-button style="background-color: rgb(0, 2, 92); color:rgb(255, 196, 32);">CREATE</button>
+
+</form>

@@ -1,0 +1,32 @@
+<div >
+<form autocomplete="off" name="changetype" method="post" #formCtrl="ngForm" (ngSubmit)="changeType()">
+ 
+    <label class="label-font">List of Existing Types(Names that will appear) appearing in the same order</label>
+    <ol>
+      <li *ngFor="let type of changetype.types">{{type}}</li>
+    </ol>
+     <br>
+     <label class="label-font">List of Existing Types(InternalType names) appearing in the same order</label>
+     <ol>
+       <li *ngFor="let type of changetype.typenames">{{type}}</li>
+     </ol>
+      <br>
+      <label class="label-font"> Select a type to replace : </label>
+      <select class="select-opt" [(ngModel)]="changetype.selected" name="type" required>
+       <option style="display:none" value="">--select--</option>
+       <option  [ngValue] ="type" *ngFor="let type of changetype.typenames">{{type}}</option>
+     </select>
+      <br><br>
+        <label class="label-font" for="name"> Enter the new name of the Type : </label>
+        <input class="change-cat-input" type="text" name="name" autocomplete="off"  [(ngModel)]="changetype.name" required>
+        <br>
+        <br>
+        <!-- <label class="label-font" for="name"> Enter type name <span style="font-size: 14px; color:rgb(63, 63, 63);">(*name must be smalls with no spaces)</span> : </label> -->
+        <input class="change-cat-input" type="text" name="typename" autocomplete="off"  [(ngModel)]="changetype.typename" required>
+        <br><br>
+         
+        <p style="color:red">{{message}}</p>
+          <button mat-raised-button style="background-color: rgb(0, 2, 92); color:rgb(255, 196, 32);">Change</button>
+      
+      </form>
+</div>

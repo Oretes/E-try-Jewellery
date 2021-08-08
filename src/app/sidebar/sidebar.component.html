@@ -1,0 +1,86 @@
+
+  <app-camera class="media-hidden" (pictureTaken)="handleImage($event)"></app-camera>
+  <div class="snapshot" *ngIf="webcamImage">
+    <!-- <button type="button" class="close" aria-label="Close"><span arial-hidden="true"><mat-icon>close</mat-icon></span></button> -->
+    <button (click)=toggleDisplay()><mat-icon>close</mat-icon></button>
+    <div [hidden]="isDisplay"><img [src]="webcamImage.imageAsDataUrl" style="width: 300px; height: 300px;"/></div>
+  </div>
+  <mat-accordion>
+  <div *ngFor ="let category of allcats;let i = index;first as First">
+    
+      <mat-expansion-panel class="mat-elevation-z4"  style="background-color: #9DD5FF;"> <!-- added inthis line for expand the panel automatically [expanded]="First"-->
+          <mat-progress-bar *ngIf="test" mode="indeterminate"></mat-progress-bar>
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                  {{category}}
+              </mat-panel-title>
+          </mat-expansion-panel-header>
+         <div *ngFor ="let type of alltypes; let j=index">
+          <mat-tab-group [color]="''" [backgroundColor]="'primary'" style="max-height:500px!important ;overflow-y:auto;">
+              <div  *ngFor="let jewels of categories[i]" >
+                 <div *ngFor ="let something of jewels[j]" class="{{something.jeweltype}}" (load)="test=false" >
+                    <mat-tab *ngIf="something.jewellery.length" label="{{something.name}}">
+                      <div class="image-grid" style="background-color: #9DD5FF;">
+                      <div *ngFor="let jewel of something.jewellery">
+                        <div class="image-blocks">&nbsp;&nbsp;
+                        <label style="font-size: 13px;">PID:&nbsp;{{jewel.name}}</label>
+                         <img src="{{jewel.image_source}}" class="{{something.jeweltype}}" attr.data-pair="{{something.pair}}" (load)="loaded=false;test=false" style="height:80px;width:130px ;" attr.category="{{something.category}}">
+                          <br><br>
+                         &nbsp;&nbsp;&nbsp;<label style="font-size: 13px; font-weight: bold;">{{jewel.weight}}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 13px; font-weight: bold;">{{jewel.karats}}</label>
+                         <mat-progress-bar *ngIf="loaded" mode="indeterminate"></mat-progress-bar>
+                        </div>
+                      </div>
+                      </div>
+                    </mat-tab>
+                  </div>
+               </div>
+          </mat-tab-group>
+          </div>
+      </mat-expansion-panel>
+  </div>
+  </mat-accordion>
+
+  <!-- <br>
+   <div class="scrollbar-component">
+    <div *ngIf = "!isDisplay" class="app">
+      <ul class="hs full">
+       <div *ngFor ="let category of allcats;let i = index;first as First">
+        <div *ngFor ="let type of alltypes; let j=index;">
+          <div  *ngFor="let jewels of categories[i]">
+            <div *ngFor ="let something of jewels[j]" class="{{something.jeweltype}}" (load)="test=false">
+              <div *ngIf="something.jewellery.length">
+                <label>{{something.name}}</label>
+                 <div class="item" *ngFor="let jewel of something.jewellery">
+                   <div><label style="font-size: 13px;">PID:&nbsp; {{jewel.name}}</label></div>
+                  <img src="{{jewel.image_source}}" class="{{something.jeweltype}}" attr.data-pair="{{something.pair}}" (load)="loaded=false;test=false" style="height:70px; width:140px ;" attr.category="{{something.category}}">
+                  <label style="font-size: 13px; font-weight: 500;">{{jewel.weight}}</label> &nbsp; &nbsp; &nbsp; &nbsp;
+                  <label style="font-size: 13px;  font-weight: 500;">{{jewel.karats}}</label>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div> -->
+   <!-- bottom scrollbar -->
+   <!-- <div class="scrollmenu" id="scrollbar">
+    <button *ngFor ="let type of alltypes" (click) = "toggleDisplay()">{{type}}</button> -->
+    <!-- <button (click) = "toggleDisplay()">Necklace</button>
+     <button (click) = "toggleDisplay()">Bindi</button>
+      <button (click) = "toggleDisplay()">Ear-Rings</button>
+      <button (click) = "toggleDisplay()">Maang-Tikka</button>
+      <button (click) = "toggleDisplay()">Kamarband</button>
+      <button (click) = "toggleDisplay()">Ring</button>
+      <button (click) = "toggleDisplay()">Bracelet</button>
+      <button (click) = "toggleDisplay()">Bangles</button>
+      <button (click) = "toggleDisplay()">Brooch</button>
+      <button (click) = "toggleDisplay()">Nosepin</button>
+      <button (click) = "toggleDisplay()">Armlet</button>
+      <button (click) = "toggleDisplay()">Wristlet</button>
+      <button (click) = "toggleDisplay()">Nose-Ring</button>
+      <button (click) = "toggleDisplay()">Anklet</button>
+      <button (click) = "toggleDisplay()">Other</button> -->
+   <!-- </div> -->
+

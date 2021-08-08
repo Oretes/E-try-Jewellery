@@ -1,0 +1,173 @@
+<div style="overflow-y: auto; height: 100%;">
+  <mat-toolbar color="primary">
+
+    <div *ngIf='auth.user$ | async as user;'>
+      <span style="padding:10px; color: #ffffff;" class="admin-panel-text"> Admin Panel</span>
+      <span style="padding:10px; color: #ffd900; text-align: center;"> Welcome {{user.displayName}}</span>
+      <span style="flex:1 1 auto"></span>
+      <button mat-raised-button (click)="auth.Signout()" class="logout-btn">Logout</button>
+
+    </div>
+
+  </mat-toolbar>
+
+  <div *ngIf='auth.user$ | async as user;'>
+
+    <!-- <div *ngIf="show" class="wrapper" id="overlay">
+      <mat-spinner style="margin:0 auto;"></mat-spinner>
+    </div> -->
+    <mat-accordion>
+      <mat-expansion-panel class="mat-elevation-z4">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Add New Jewellery
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form autocomplete="off" name="newjeweller" method="post" #formCtrl="ngForm" (ngSubmit)="newjewellery(newjewel)"
+          #newjewel="ngForm">
+
+          <div class="">
+            <label class="label-font" for="name"> Enter the ProductId of the Jewellery : </label>
+            <input class="add-jewellery-input" type="text" name="name" autocomplete="off"
+              [(ngModel)]="newJewellery.name" required>
+          </div>
+
+          <br>
+          <br>
+          <div class="">
+            <label class="label-font" for="name">Select the Jewellery type : </label>
+            <select class="select-opt" [(ngModel)]="newJewellery.selected" name="type" required>
+              <option style="display:none" value="">--select--</option>
+              <option [ngValue]="type" *ngFor="let type of newJewellery.type">{{type}}</option>
+            </select>
+          </div>
+
+          <br>
+          <br>
+          <div class="">
+            <label class="label-font" for="name">Select a Category for Product : </label>
+            <select class="select-opt" [(ngModel)]="newJewellery.categorySelected" name="category" required>
+              <option style="display:none" value="">--select--</option>
+              <option [ngValue]="type" *ngFor="let type of newJewellery.category">{{type}}</option>
+            </select>
+          </div>
+
+          <br>
+          <br>
+          <div class="">
+            <!-- <label class="label-font" for="karats">Select the Jewellery karat : </label>
+            <select class="select-opt" [(ngModel)]="newJewellery.karats" name="karats" required>
+              <option style="display:none" value="">--select--</option>
+              <option *ngFor="let karat of newJewellery.karats">{{karat}}</option>
+            </select> -->
+            <label class="label-font" for="karat"> Enter the jewellery karat : </label>
+           <select class="select-opt" [(ngModel)]="newJewellery.karat" name="karats">
+            <option style="display:none" value="">---select---</option>
+            <option  [ngValue] ="karat" *ngFor="let karat of newJewellery.karats">{{karat}}</option>
+          </select>
+          </div>
+           <br><br>
+          <div class="">
+            <label class="label-font" for="weight"> Enter the Jewellery weight: </label>
+            <input class="add-jewellery-input" type="text" name="weight" autocomplete="off" [(ngModel)]="newJewellery.weight">
+          </div>
+          <br>
+          <div class="dropZone" appDropZone (hovered)="toggleHover($event)" (dropped)="startUpload($event)">
+            <div class="file">
+              <input type="file" (change)="startUpload($event.target.files)" name="fileupload"
+                [(ngModel)]="newJewellery.file">
+            </div>
+
+          </div>
+          <div *ngIf="percentage | async as pct">
+             <label>{{pct}}</label>
+            <label *ngIf="pct==100"> Uploaded</label>
+            <mat-progress-bar mode="determinate" value="{{pct}}"></mat-progress-bar>
+          </div>
+          <p style="color:red">{{message}}</p>
+          <button mat-raised-button style="background-color: rgb(0, 2, 92); color:rgb(255, 196, 32);">Upload</button>
+        </form>
+  <!-- add jewellery part end here -->
+
+      </mat-expansion-panel>
+      <mat-expansion-panel class="mat-elevation-z4">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Add New Category
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-add-cat (categoryCreated)='NewChange($event)' [refresh]="refresh"></app-add-cat>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel class="mat-elevation-z4">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Add New Type
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-add-type style="z-index:0 ;" (typeCreated)='NewChange($event)' [refresh]="refresh"></app-add-type>
+
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="mat-elevation-z4">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Delete Category
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-delete-cat style="z-index:0 ;" (categoryDeleted)='NewChange($event)' [refresh]="refresh"></app-delete-cat>
+
+
+      </mat-expansion-panel>
+      <mat-expansion-panel class="mat-elevation-z4">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Delete Type
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-delete-type style="z-index:0 ;" (typeDeleted)='NewChange($event)' [refresh]="refresh"></app-delete-type>
+
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="mat-elevation-z4">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Delete Jewellery
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- <app-delete-type style="z-index:0 ;"(typeDeleted)='NewCat($event)' [refresh]= "refresh"></app-delete-type> -->
+        <app-delete-jewellery (sendLink)="sendLink($event)" [refresh]="refresh"></app-delete-jewellery>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel class="mat-elevation-z4">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Change Category
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- <app-delete-type style="z-index:0 ;"(typeDeleted)='NewCat($event)' [refresh]= "refresh"></app-delete-type> -->
+        <app-changecatname (categoryChanged)='NewChange($event)' [refresh]="refresh"></app-changecatname>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="mat-elevation-z4">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Change Type
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- <app-delete-type style="z-index:0 ;"(typeDeleted)='NewCat($event)' [refresh]= "refresh"></app-delete-type> -->
+        <app-changetypename (typeChanged)='NewChange($event)' [refresh]="refresh"></app-changetypename>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

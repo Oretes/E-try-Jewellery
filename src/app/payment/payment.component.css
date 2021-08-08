@@ -1,0 +1,27 @@
+
+:host {
+  display: block;
+  background-color:#252525;
+  height: 100vh;
+ }
+
+.home-btn{
+  margin:20px;
+}
+
+.payment-page{
+  text-align: center;
+  justify-content: center;
+}
+.payment-head h4{
+  font-size: 50px;
+  font-weight: 500;
+  color: white;
+}
+.payment-content{
+  font-size: 20px;
+  color: white;
+}
+.c{
+  display: none;
+}
